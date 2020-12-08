@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<inset xmlns:android="http://schemas.android.com/apk/res/android">
+    <shape android:shape="rectangle">
+
+        <gradient
+            android:startColor="@color/panel_start"
+            android:endColor="@color/panel_end"
+            android:angle="270"
+            android:type="linear"/>
+
+        <stroke android:width="3dp" android:color="@color/panel_start"/>
+
+        <corners android:radius="6dp"/>
+
+    </shape>
+</inset>

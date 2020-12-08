@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_fon"
+    tools:context=".ui.elements.ElemetntsFragment"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ImageButton
+            android:id="@+id/img_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="center"
+            android:src="@drawable/plus"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="30dp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4">
+
+                <ListView
+                    android:id="@+id/element_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:choiceMode="singleChoice"
+                    android:listSelector="@android:color/transparent"
+                    android:divider="@android:color/transparent"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="6">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/element_text_answer_a_num"
+                                style="@style/text_for_answer_num"
+                                android:text="@string/answer_a"
+                                android:textSize="14sp"/>
+
+                            <TextView
+                                android:id="@+id/element_text_answer_a"
+                                style="@style/text_for_answer"
+                                android:text="@string/start_test_btn"
+                                android:textSize="14sp"/>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/element_text_answer_b_num"
+                                style="@style/text_for_answer_num"
+                                android:text="@string/answer_b"
+                                android:textSize="14sp"/>
+
+                            <TextView
+                                android:id="@+id/element_text_answer_b"
+                                style="@style/text_for_answer"
+                                android:text="@string/start_test_btn"
+                                android:textSize="14sp"/>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/element_text_answer_c_num"
+                                style="@style/text_for_answer_num"
+                                android:text="@string/answer_c"
+                                android:textSize="14sp"/>
+
+                            <TextView
+                                android:id="@+id/element_text_answer_c"
+                                style="@style/text_for_answer"
+                                android:text="@string/start_test_btn"
+                                android:textSize="14sp"/>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/element_text_answer_d_num"
+                                style="@style/text_for_answer_num"
+                                android:text="@string/answer_d"
+                                android:textSize="14sp"/>
+
+                            <TextView
+                                android:id="@+id/element_text_answer_d"
+                                style="@style/text_for_answer"
+                                android:text="@string/start_test_btn"
+                                android:textSize="14sp"/>
+
+                        </RelativeLayout>
+                    </LinearLayout>
+                </ScrollView>
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

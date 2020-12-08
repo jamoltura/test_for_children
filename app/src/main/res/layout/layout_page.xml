@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_fon"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/text_question"
+                    style="@style/text_for_question"
+                    android:text="@string/start_test_btn"
+                    android:textSize="20sp"
+                    app:autoSizeMaxTextSize="100sp"
+                    app:autoSizeMinTextSize="20sp"
+                    app:autoSizeStepGranularity="1sp"
+                    app:autoSizeTextType="uniform" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/text_answer_a"
+                    style="@style/text_for_answer"
+                    android:text="@string/start_test_btn"
+                    android:textSize="20sp"
+                    app:autoSizeMaxTextSize="100sp"
+                    app:autoSizeMinTextSize="20sp"
+                    app:autoSizeStepGranularity="1sp"
+                    app:autoSizeTextType="uniform" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.test_for_children.ui.home.HomeFragment"
+        android:label="home_fragment"
+        tools:layout="@layout/home_fragment" />
+    <fragment
+        android:id="@+id/workFragment"
+        android:name="com.example.test_for_children.ui.work.WorkFragment"
+        android:label="work_fragment"
+        tools:layout="@layout/work_fragment" />
+    <fragment
+        android:id="@+id/finishFragment"
+        android:name="com.example.test_for_children.ui.finish.FinishFragment"
+        android:label="finish_fragment"
+        tools:layout="@layout/finish_fragment" />
+    <fragment
+        android:id="@+id/elemetntsFragment"
+        android:name="com.example.test_for_children.ui.elements.ElemetntsFragment"
+        android:label="elemetnts_fragment"
+        tools:layout="@layout/elemetnts_fragment" />
+    <fragment
+        android:id="@+id/onlyElementFragment"
+        android:name="com.example.test_for_children.ui.onlyelement.OnlyElementFragment"
+        android:label="only_element_fragment"
+        tools:layout="@layout/only_element_fragment" />
+</navigation>
