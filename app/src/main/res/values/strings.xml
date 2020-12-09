@@ -18,5 +18,6 @@
     <string name="delite_all_elements">Удалить все</string>
     <string name="list_question">Список вопросов</string>
     <string name="variants">Варианты ответов</string>
+    <string name="admin">Администратор</string>
 
 </resources>

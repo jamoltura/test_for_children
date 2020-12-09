@@ -21,6 +21,7 @@ import com.example.test_for_children.R;
 import com.example.test_for_children.Test.ControlTest;
 import com.example.test_for_children.Test.Test;
 import com.example.test_for_children.Test.TestBase;
+import com.example.test_for_children.classes.LoginDialog;
 import com.example.test_for_children.interfaces.NavigationEvents;
 import com.example.test_for_children.viewmodels.TestViewModel;
 
@@ -49,6 +50,19 @@ public class HomeFragment extends Fragment {
                 navigationEvents.home_to_elements();
             }
         });
+
+        btn.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                getActivity()
+                        .getSupportFragmentManager()
+                        .beginTransaction()
+                        .add(new LoginDialog(), "logindialog")
+                        .commit();
+                return true;
+            }
+        });
+
         return v;
     }
 
