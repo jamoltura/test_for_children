@@ -1,5 +1,6 @@
 package com.example.test_for_children.ui.elements;
 
+import androidx.appcompat.widget.PopupMenu;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
@@ -11,6 +12,9 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -19,9 +23,11 @@ import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.test_for_children.MainActivity;
 import com.example.test_for_children.R;
+import com.example.test_for_children.Test.ControlTest;
 import com.example.test_for_children.Test.OnlyTest;
 import com.example.test_for_children.Test.Test;
 import com.example.test_for_children.adapters.ElementAdapter;
@@ -38,6 +44,13 @@ public class ElemetntsFragment extends Fragment implements ElementListEvent {
     private TextView textView_c;
     private TextView textView_d;
 
+    private TextView text_answer_a_num;
+    private TextView text_answer_b_num;
+    private TextView text_answer_c_num;
+    private TextView text_answer_d_num;
+
+    private ElementAdapter adapter;
+
     public static ElemetntsFragment newInstance() {
         return new ElemetntsFragment();
     }
@@ -50,10 +63,23 @@ public class ElemetntsFragment extends Fragment implements ElementListEvent {
 
         listView = v.findViewById(R.id.element_list);
 
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                showPopupMenu(view, position);
+                return true;
+            }
+        });
+
         textView_a = v.findViewById(R.id.element_text_answer_a);
         textView_b = v.findViewById(R.id.element_text_answer_b);
         textView_c = v.findViewById(R.id.element_text_answer_c);
         textView_d = v.findViewById(R.id.element_text_answer_d);
+
+        text_answer_a_num = (TextView) v.findViewById(R.id.element_text_answer_a_num);
+        text_answer_b_num = (TextView) v.findViewById(R.id.element_text_answer_b_num);
+        text_answer_c_num = (TextView) v.findViewById(R.id.element_text_answer_c_num);
+        text_answer_d_num = (TextView) v.findViewById(R.id.element_text_answer_d_num);
 
         ImageButton img_add = (ImageButton) v.findViewById(R.id.img_add);
         img_add.setOnClickListener(new View.OnClickListener() {
@@ -71,21 +97,8 @@ public class ElemetntsFragment extends Fragment implements ElementListEvent {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
         TestViewModel mViewModel = ViewModelProviders.of(getActivity()).get(TestViewModel.class);
-
-        mViewModel.getDataBase().observe(getViewLifecycleOwner(), new Observer<Test>() {
-            @Override
-            public void onChanged(Test test) {
-                LayoutInflater lInflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                ElementAdapter adapter = new ElementAdapter(lInflater, test, ElemetntsFragment.this);
-                listView.setAdapter(adapter);
-                listView.setOnItemClickListener(itemClickListener);
-                listView.setSoundEffectsEnabled(false);
-                listView.performItemClick(listView, 0, 0);
-                listView.setSoundEffectsEnabled(true);
-            }
-        });
+        updateView(mViewModel);
     }
 
     AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
@@ -98,6 +111,51 @@ public class ElemetntsFragment extends Fragment implements ElementListEvent {
         }
     };
 
+    private void showPopupMenu(View v, final int position){
+        PopupMenu popupMenu = new PopupMenu(getContext(), v);
+        popupMenu.inflate(R.menu.element_menu);
+
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+
+                switch (item.getItemId()){
+                    case R.id.edit:
+                        NavigationEvents navigationEvents = (MainActivity) getActivity();
+                        assert navigationEvents != null;
+                        Bundle bundle = new Bundle();
+                        bundle.putInt("index", position);
+                        navigationEvents.element_to_onlyelement(bundle);
+                        break;
+                    case R.id.del:
+                        ControlTest controlTest = new ControlTest();
+                        if (controlTest.deliteTest(getContext(), position)) {
+                            Toast.makeText(getContext(), "Данные успешно удалено", Toast.LENGTH_SHORT).show();
+                            TestViewModel mViewModel = ViewModelProviders.of(getActivity()).get(TestViewModel.class);
+                            mViewModel.init(getActivity().getApplicationContext());
+                            updateView(mViewModel);
+                        }else {
+                            Toast.makeText(getContext(), "Данные не удалено", Toast.LENGTH_SHORT).show();
+                        }
+                        break;
+                    case R.id.del_all:
+                        ControlTest controlTest1 = new ControlTest();
+                        if (controlTest1.deliteAllTest(getContext())){
+                            Toast.makeText(getContext(), "Все данные успешно удалено", Toast.LENGTH_SHORT).show();
+                            TestViewModel mViewModel = ViewModelProviders.of(getActivity()).get(TestViewModel.class);
+                            mViewModel.init(getActivity().getApplicationContext());
+                            updateView(mViewModel);
+                        }else {
+                            Toast.makeText(getContext(), "Данные не удалено", Toast.LENGTH_SHORT).show();
+                        }
+                }
+
+                return true;
+            }
+        });
+        popupMenu.show();
+    }
+
     @Override
     public void elementClick(OnlyTest onlyTest) {
         textView_a.setText(onlyTest.getAnswers()[0]);
@@ -105,19 +163,48 @@ public class ElemetntsFragment extends Fragment implements ElementListEvent {
         textView_c.setText(onlyTest.getAnswers()[2]);
         textView_d.setText(onlyTest.getAnswers()[3]);
 
-        textView_a.setBackgroundResource(R.drawable.text_answer);
-        textView_b.setBackgroundResource(R.drawable.text_answer);
-        textView_c.setBackgroundResource(R.drawable.text_answer);
-        textView_d.setBackgroundResource(R.drawable.text_answer);
+        ViewSelect(onlyTest.getIsAnswer());
+    }
 
-        switch (onlyTest.getIsAnswer()){
-            case 0: textView_a.setBackgroundResource(R.drawable.text_answer_select);
+    private void ViewSelect(int index){
+        text_answer_a_num.setBackgroundResource(R.drawable.text_question);
+        text_answer_b_num.setBackgroundResource(R.drawable.text_question);
+        text_answer_c_num.setBackgroundResource(R.drawable.text_question);
+        text_answer_d_num.setBackgroundResource(R.drawable.text_question);
+
+        switch (index){
+            case 0: text_answer_a_num.setBackgroundResource(R.drawable.text_answer);
                 break;
-            case 1: textView_b.setBackgroundResource(R.drawable.text_answer_select);
+            case 1: text_answer_b_num.setBackgroundResource(R.drawable.text_answer);
                 break;
-            case 2: textView_c.setBackgroundResource(R.drawable.text_answer_select);
+            case 2: text_answer_c_num.setBackgroundResource(R.drawable.text_answer);
                 break;
-            case 3: textView_d.setBackgroundResource(R.drawable.text_answer_select);
+            case 3: text_answer_d_num.setBackgroundResource(R.drawable.text_answer);
         }
+    }
+
+    private void clearView(){
+        textView_a.setText("");
+        textView_b.setText("");
+        textView_c.setText("");
+        textView_d.setText("");
+
+        ViewSelect(-1);
+    }
+
+    private void updateView(TestViewModel mViewModel){
+        clearView();
+        mViewModel.getDataBase().observe(getViewLifecycleOwner(), new Observer<Test>() {
+            @Override
+            public void onChanged(Test test) {
+                LayoutInflater lInflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                adapter = new ElementAdapter(lInflater, test, ElemetntsFragment.this);
+                listView.setAdapter(adapter);
+                listView.setOnItemClickListener(itemClickListener);
+                listView.setSoundEffectsEnabled(false);
+                listView.performItemClick(listView, 0, 0);
+                listView.setSoundEffectsEnabled(true);
+            }
+        });
     }
 }

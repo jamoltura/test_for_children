@@ -58,12 +58,12 @@ public class MainActivity extends AppCompatActivity implements NavigationEvents 
         */
 
         mViewModel = ViewModelProviders.of(this).get(TestViewModel.class);
-        mViewModel.initRand(getApplicationContext());
+        mViewModel.init(getApplicationContext());
     }
 
     @Override
     public void home_to_work(){
-
+        mViewModel.initRand(getApplicationContext());
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_container);
         navController.navigate(R.id.workFragment);
     }
@@ -103,6 +103,12 @@ public class MainActivity extends AppCompatActivity implements NavigationEvents 
     public void element_to_onlyelement() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_container);
         navController.navigate(R.id.onlyElementFragment);
+    }
+
+    @Override
+    public void element_to_onlyelement(Bundle bundle) {
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_container);
+        navController.navigate(R.id.onlyElementFragment, bundle);
     }
 
     @Override

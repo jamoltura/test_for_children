@@ -78,6 +78,78 @@ public class TestBase {
         return list;
     }
 
+    public OnlyTest getOnlyTest(Context context, int index){
+
+        SQLiteDatabase db = context.openOrCreateDatabase(NAME_BASE, MODE_PRIVATE, null);
+        String sql = "SELECT * FROM " +TABLE_TEST+";";
+
+        Cursor query = db.rawQuery(sql, null);
+
+        OnlyTest onlyTest = new OnlyTest();
+
+        if (query.moveToPosition(index)) {
+            onlyTest.setQuestion(query.getString(1));
+            String[] answers = OnlyTest.emptyAnswers();
+            answers[0] = query.getString(2);
+            answers[1] = query.getString(3);
+            answers[2] = query.getString(4);
+            answers[3] = query.getString(5);
+            onlyTest.setAnswers(answers);
+            onlyTest.setIsAnswer(query.getInt(6));
+        }
+
+        query.close();
+        db.close();
+
+        return onlyTest;
+    }
+
+    public boolean editTest(Context context, OnlyTest onlyTest, int index){
+
+        SQLiteDatabase db = context.openOrCreateDatabase(NAME_BASE, MODE_PRIVATE, null);
+        String sql = "SELECT * FROM " +TABLE_TEST+";";
+
+        Cursor query = db.rawQuery(sql, null);
+
+        int indexUpdate = 0;
+
+        if (query.moveToPosition(index)) {
+            String value = query.getString(0);
+
+            ContentValues values = new ContentValues();
+            values.put(QUESTION, onlyTest.getQuestion());
+            values.put(ANSWER_A, onlyTest.getAnswers()[0]);
+            values.put(ANSWER_B, onlyTest.getAnswers()[1]);
+            values.put(ANSWER_C, onlyTest.getAnswers()[2]);
+            values.put(ANSWER_D, onlyTest.getAnswers()[3]);
+            values.put(IS_ANSWER, onlyTest.getIsAnswer());
+
+            indexUpdate = db.update(TABLE_TEST, values, KEY_ID + "=?", new String[] {value});
+
+        }
+
+        query.close();
+        db.close();
+
+        return indexUpdate == 1;
+    }
+
+    public boolean deliteOnlyTest(Context context, int index){
+        SQLiteDatabase db = context.openOrCreateDatabase(NAME_BASE, MODE_PRIVATE, null);
+        String sql = "SELECT * FROM " +TABLE_TEST+";";
+
+        Cursor query = db.rawQuery(sql, null);
+
+        int indexUpdate = 0;
+
+        if (query.moveToPosition(index)) {
+            String value = query.getString(0);
+            indexUpdate = db.delete(TABLE_TEST, KEY_ID + "=?", new String[]{value});
+        }
+
+        return indexUpdate == 1;
+    }
+
     public int getCountTest(Context context){
         SQLiteDatabase db = context.openOrCreateDatabase(NAME_BASE, MODE_PRIVATE, null);
         String sql = "SELECT * FROM " +TABLE_TEST+";";
@@ -90,6 +162,21 @@ public class TestBase {
         return result;
     }
 
+    public boolean deleteAllTest(Context context){
+        SQLiteDatabase db = context.openOrCreateDatabase(NAME_BASE, MODE_PRIVATE, null);
+        String sql = "SELECT * FROM " +TABLE_TEST+";";
+
+        Cursor query = db.rawQuery(sql, null);
+
+        int indexUpdate = 0;
+
+
+        indexUpdate = db.delete(TABLE_TEST, null, null);
+
+        return indexUpdate != -1;
+    }
+
+    /**
     public boolean delete(Context context){
         SQLiteDatabase db = context.openOrCreateDatabase(NAME_BASE, MODE_PRIVATE, null);
         String path = db.getPath();
@@ -97,4 +184,5 @@ public class TestBase {
         File file = new File(path);
         return SQLiteDatabase.deleteDatabase(file);
     }
+     */
 }

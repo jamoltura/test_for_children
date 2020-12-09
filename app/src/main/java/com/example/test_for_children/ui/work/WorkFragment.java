@@ -115,7 +115,7 @@ public class WorkFragment extends Fragment implements PageEvents {
         navigationEvents.work_to_finish();
     }
 
-    private CountDownTimer countDownTimer = new CountDownTimer(30000, 1000) {
+    private final CountDownTimer countDownTimer = new CountDownTimer(30000, 1000) {
         @Override
         public void onTick(long millisUntilFinished) {
 

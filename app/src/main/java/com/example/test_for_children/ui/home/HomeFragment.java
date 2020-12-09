@@ -18,6 +18,7 @@ import android.widget.ImageButton;
 
 import com.example.test_for_children.MainActivity;
 import com.example.test_for_children.R;
+import com.example.test_for_children.Test.ControlTest;
 import com.example.test_for_children.Test.Test;
 import com.example.test_for_children.Test.TestBase;
 import com.example.test_for_children.interfaces.NavigationEvents;
@@ -57,17 +58,19 @@ public class HomeFragment extends Fragment {
 
         TestViewModel mViewModel = ViewModelProviders.of(getActivity()).get(TestViewModel.class);
 
-        mViewModel.getDataRand().observe(getViewLifecycleOwner(), new Observer<Test>() {
+        mViewModel.getDataBaseCount().observe(getViewLifecycleOwner(), new Observer<Integer>() {
             @Override
-            public void onChanged(Test test) {
-                btn.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        NavigationEvents navigationEvents = (MainActivity) getActivity();
-                        assert navigationEvents != null;
-                        navigationEvents.home_to_work();
-                    }
-                });
+            public void onChanged(Integer integer) {
+                if (integer >= ControlTest.COUNT_TESTS){
+                    btn.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            NavigationEvents navigationEvents = (MainActivity) getActivity();
+                            assert navigationEvents != null;
+                            navigationEvents.home_to_work();
+                        }
+                    });
+                }
             }
         });
     }

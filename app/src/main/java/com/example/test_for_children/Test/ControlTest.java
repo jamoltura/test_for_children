@@ -18,6 +18,26 @@ public class ControlTest {
         return testBase.saveOnlyTest(context, onlyTest);
     }
 
+    public boolean updateTest(Context context, OnlyTest onlyTest, int index){
+        TestBase testBase = new TestBase(context);
+        return testBase.editTest(context, onlyTest, index);
+    }
+
+    public boolean deliteTest(Context context, int index){
+        TestBase testBase = new TestBase(context);
+        return testBase.deliteOnlyTest(context, index);
+    }
+
+    public boolean deliteAllTest(Context context){
+        TestBase testBase = new TestBase(context);
+        return testBase.deleteAllTest(context);
+    }
+
+    public OnlyTest getOnlyTest(Context context, int index){
+        TestBase testBase = new TestBase(context);
+        return testBase.getOnlyTest(context, index);
+    }
+
     public OnlyTest[] getRandomTest(Context context){
         ArrayList<OnlyTest> list = getTest(context);
 

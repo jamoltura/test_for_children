@@ -17,6 +17,7 @@ public class TestViewModel extends ViewModel {
     private static final String TAG = "myLogs";
 
     private MutableLiveData<Test> dataRand;
+    private MutableLiveData<Integer> dataBaseCount;
     private MutableLiveData<Test> dataBase;
 
     public TestViewModel() {
@@ -27,10 +28,11 @@ public class TestViewModel extends ViewModel {
         TestBase testBase = new TestBase(context.getApplicationContext());
         int countBase = testBase.getCountTest(context.getApplicationContext());
 
-        if (countBase > 0){
-            dataBase = new MutableLiveData<>();
-            dataBase.postValue(createData(context));
-        }
+        dataBaseCount = new MutableLiveData<>();
+        dataBaseCount.postValue(countBase);
+
+        dataBase = new MutableLiveData<>();
+        dataBase.postValue(createData(context));
     }
 
     public void initRand(Context context){
@@ -67,5 +69,9 @@ public class TestViewModel extends ViewModel {
 
     public MutableLiveData<Test> getDataBase() {
         return dataBase;
+    }
+
+    public MutableLiveData<Integer> getDataBaseCount() {
+        return dataBaseCount;
     }
 }

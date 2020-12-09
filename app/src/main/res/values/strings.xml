@@ -13,5 +13,10 @@
     <string name="head_finish">Резултаты тестирования:</string>
     <string name="result_test_count">Правильных ответов:</string>
     <string name="wrong_show">Вы ошиблись в этих вопросах:</string>
+    <string name="edit_element">Редактировать</string>
+    <string name="delite_element">Удалить</string>
+    <string name="delite_all_elements">Удалить все</string>
+    <string name="list_question">Список вопросов</string>
+    <string name="variants">Варианты ответов</string>
 
 </resources>
