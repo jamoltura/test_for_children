@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/color_fon"
     tools:context=".ui.elements.ElemetntsFragment"
     android:orientation="vertical">
 
@@ -12,6 +13,56 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/list_question"
+                    android:layout_centerInParent="true"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="6">
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/variants"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="20dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"/>
+
+                <ImageButton
+                    android:id="@+id/img_add"
+                    style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="30dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/plus" />
+            </RelativeLayout>
+        </LinearLayout>
 
     </RelativeLayout>
 
@@ -28,12 +79,19 @@
             <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="4">
+                android:layout_weight="4"
+                android:layout_margin="10dp">
 
                 <ListView
                     android:id="@+id/element_list"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:choiceMode="singleChoice"
+                    android:listSelector="@android:color/transparent"
+                    android:divider="@android:color/transparent"
+                    android:background="@drawable/text_question"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -48,7 +106,9 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical" >
+                        android:layout_margin="10dp"
+                        android:background="@drawable/text_question"
+                        android:orientation="vertical">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -58,13 +118,12 @@
                                 android:id="@+id/element_text_answer_a_num"
                                 style="@style/text_for_answer_num"
                                 android:text="@string/answer_a"
-                                android:textSize="20sp"/>
+                                android:textSize="14sp" />
 
-                            <Button
+                            <TextView
                                 android:id="@+id/element_text_answer_a"
                                 style="@style/text_for_answer"
-                                android:text="@string/start_test_btn"
-                                android:textSize="20sp"/>
+                                android:textSize="14sp" />
 
                         </RelativeLayout>
 
@@ -76,13 +135,12 @@
                                 android:id="@+id/element_text_answer_b_num"
                                 style="@style/text_for_answer_num"
                                 android:text="@string/answer_b"
-                                android:textSize="20sp"/>
+                                android:textSize="14sp" />
 
-                            <Button
+                            <TextView
                                 android:id="@+id/element_text_answer_b"
                                 style="@style/text_for_answer"
-                                android:text="@string/start_test_btn"
-                                android:textSize="20sp"/>
+                                android:textSize="14sp" />
 
                         </RelativeLayout>
 
@@ -94,13 +152,12 @@
                                 android:id="@+id/element_text_answer_c_num"
                                 style="@style/text_for_answer_num"
                                 android:text="@string/answer_c"
-                                android:textSize="20sp"/>
+                                android:textSize="14sp" />
 
-                            <Button
+                            <TextView
                                 android:id="@+id/element_text_answer_c"
                                 style="@style/text_for_answer"
-                                android:text="@string/start_test_btn"
-                                android:textSize="20sp"/>
+                                android:textSize="14sp" />
 
                         </RelativeLayout>
 
@@ -112,13 +169,12 @@
                                 android:id="@+id/element_text_answer_d_num"
                                 style="@style/text_for_answer_num"
                                 android:text="@string/answer_d"
-                                android:textSize="20sp"/>
+                                android:textSize="14sp" />
 
-                            <Button
+                            <TextView
                                 android:id="@+id/element_text_answer_d"
                                 style="@style/text_for_answer"
-                                android:text="@string/start_test_btn"
-                                android:textSize="20sp"/>
+                                android:textSize="14sp" />
 
                         </RelativeLayout>
                     </LinearLayout>

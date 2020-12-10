@@ -8,8 +8,12 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import com.example.test_for_children.Test.ControlTest;
+import com.example.test_for_children.Test.OnlyTest;
 import com.example.test_for_children.interfaces.NavigationEvents;
 import com.example.test_for_children.viewmodels.TestViewModel;
+
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity implements NavigationEvents {
 
@@ -22,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements NavigationEvents 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /**
+
         Random random = new Random();
 
         for (int i = 0; i < 100; i++) {
@@ -44,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements NavigationEvents 
 
             controlTest.setTest(getApplicationContext(), onlyTest);
         }
-        */
+
 
      //   ControlTest controlTest = new ControlTest();
       //  OnlyTest[] onlyTests = controlTest.getRandomTest(getApplicationContext());
@@ -77,7 +81,9 @@ public class MainActivity extends AppCompatActivity implements NavigationEvents 
     @Override
     public void work_to_finish(){
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_container);
+        navController.popBackStack();
         navController.navigate(R.id.finishFragment);
+
     }
 
     @Override
@@ -113,9 +119,6 @@ public class MainActivity extends AppCompatActivity implements NavigationEvents 
 
     @Override
     public void onBackPressed() {
-
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_container);
-
         super.onBackPressed();
     }
 

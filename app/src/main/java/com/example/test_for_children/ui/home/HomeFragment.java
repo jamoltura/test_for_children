@@ -28,7 +28,6 @@ import com.example.test_for_children.viewmodels.TestViewModel;
 public class HomeFragment extends Fragment {
 
     private Button btn;
-    private ImageButton imageButton;
 
     public static HomeFragment newInstance() {
         return new HomeFragment();
@@ -41,15 +40,6 @@ public class HomeFragment extends Fragment {
         View v = inflater.inflate(R.layout.home_fragment, container, false);
 
         btn = v.findViewById(R.id.btn_start_test);
-        imageButton = v.findViewById(R.id.btn_add);
-        imageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                NavigationEvents navigationEvents = (MainActivity) getActivity();
-                assert navigationEvents != null;
-                navigationEvents.home_to_elements();
-            }
-        });
 
         btn.setOnLongClickListener(new View.OnLongClickListener() {
             @Override

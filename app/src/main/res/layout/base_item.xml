@@ -7,9 +7,10 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/text_finish"
-        style="@style/text_for_finish"
+        android:id="@+id/element_text_finish"
+        style="@style/text_for_question_element"
         android:text="@string/start_test_btn"
-        android:textSize="20sp"/>
+        android:textSize="14sp"
+        />
 
 </LinearLayout>

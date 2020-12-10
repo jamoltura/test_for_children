@@ -49,6 +49,8 @@ public class ElemetntsFragment extends Fragment implements ElementListEvent {
     private TextView text_answer_c_num;
     private TextView text_answer_d_num;
 
+    private TextView quistion_count;
+
     private ElementAdapter adapter;
 
     public static ElemetntsFragment newInstance() {
@@ -90,6 +92,8 @@ public class ElemetntsFragment extends Fragment implements ElementListEvent {
                 navigationEvents.element_to_onlyelement();
             }
         });
+
+        quistion_count = v.findViewById(R.id.quistion_count);
 
         return v;
     }
@@ -204,6 +208,14 @@ public class ElemetntsFragment extends Fragment implements ElementListEvent {
                 listView.setSoundEffectsEnabled(false);
                 listView.performItemClick(listView, 0, 0);
                 listView.setSoundEffectsEnabled(true);
+            }
+        });
+
+        mViewModel.getDataBaseCount().observe(getViewLifecycleOwner(), new Observer<Integer>() {
+            @Override
+            public void onChanged(Integer integer) {
+                String value = getString(R.string.list_question) + " :" + integer + " шт";
+                quistion_count.setText(value);
             }
         });
     }

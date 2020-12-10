@@ -178,7 +178,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:baselineAligned="false" android:orientation="horizontal">
+            android:baselineAligned="false"
+            android:orientation="horizontal">
 
             <RelativeLayout
                 android:layout_width="0dp"
@@ -189,9 +190,10 @@
                     android:id="@+id/element_cancel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="cancel"
+                    android:text="@string/cancel"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="20dp"/>
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/ic_round_btn"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -203,9 +205,10 @@
                     android:id="@+id/element_ok"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ok"
+                    android:text="@string/ok"
                     android:layout_alignParentStart="true"
-                    android:layout_marginStart="20dp"/>
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/ic_round_btn"/>
             </RelativeLayout>
         </LinearLayout>
     </RelativeLayout>

@@ -17,7 +17,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:baselineAligned="false" android:orientation="horizontal">
+            android:baselineAligned="false"
+            android:orientation="horizontal">
 
             <RelativeLayout
                 android:layout_width="0dp"
@@ -25,7 +26,7 @@
                 android:layout_weight="4">
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/quistion_count"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/list_question"
@@ -52,13 +53,14 @@
 
                 <ImageButton
                     android:id="@+id/img_add"
+                    style="@style/Widget.AppCompat.Button.Borderless.Colored"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="30dp"
                     android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="30dp"
                     android:adjustViewBounds="true"
-                    android:scaleType="center"
-                    android:src="@drawable/plus"/>
+                    android:scaleType="fitXY"
+                    android:src="@drawable/plus" />
             </RelativeLayout>
         </LinearLayout>
 
@@ -104,9 +106,9 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
                         android:layout_margin="10dp"
-                        android:background="@drawable/text_question">
+                        android:background="@drawable/text_question"
+                        android:orientation="vertical">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -116,12 +118,12 @@
                                 android:id="@+id/element_text_answer_a_num"
                                 style="@style/text_for_answer_num"
                                 android:text="@string/answer_a"
-                                android:textSize="14sp"/>
+                                android:textSize="14sp" />
 
                             <TextView
                                 android:id="@+id/element_text_answer_a"
                                 style="@style/text_for_answer"
-                                android:textSize="14sp"/>
+                                android:textSize="14sp" />
 
                         </RelativeLayout>
 
@@ -133,12 +135,12 @@
                                 android:id="@+id/element_text_answer_b_num"
                                 style="@style/text_for_answer_num"
                                 android:text="@string/answer_b"
-                                android:textSize="14sp"/>
+                                android:textSize="14sp" />
 
                             <TextView
                                 android:id="@+id/element_text_answer_b"
                                 style="@style/text_for_answer"
-                                android:textSize="14sp"/>
+                                android:textSize="14sp" />
 
                         </RelativeLayout>
 
@@ -150,12 +152,12 @@
                                 android:id="@+id/element_text_answer_c_num"
                                 style="@style/text_for_answer_num"
                                 android:text="@string/answer_c"
-                                android:textSize="14sp"/>
+                                android:textSize="14sp" />
 
                             <TextView
                                 android:id="@+id/element_text_answer_c"
                                 style="@style/text_for_answer"
-                                android:textSize="14sp"/>
+                                android:textSize="14sp" />
 
                         </RelativeLayout>
 
@@ -167,12 +169,12 @@
                                 android:id="@+id/element_text_answer_d_num"
                                 style="@style/text_for_answer_num"
                                 android:text="@string/answer_d"
-                                android:textSize="14sp"/>
+                                android:textSize="14sp" />
 
                             <TextView
                                 android:id="@+id/element_text_answer_d"
                                 style="@style/text_for_answer"
-                                android:textSize="14sp"/>
+                                android:textSize="14sp" />
 
                         </RelativeLayout>
                     </LinearLayout>

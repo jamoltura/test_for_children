@@ -19,5 +19,7 @@
     <string name="list_question">Список вопросов</string>
     <string name="variants">Варианты ответов</string>
     <string name="admin">Администратор</string>
+    <string name="cancel">отмена</string>
+    <string name="ok">ок</string>
 
 </resources>

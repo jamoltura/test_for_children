@@ -1,13 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/color_fon"
+    android:orientation="vertical"
     tools:context=".ui.work.WorkFragment">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello" />
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/progress_h"
+                android:layout_centerInParent="true"
+                android:layout_toStartOf="@id/progressBar"
+                android:layout_marginEnd="20dp"/>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:progressDrawable="@drawable/pinkprogress"
+                android:layout_width="@dimen/progress_w"
+                android:layout_height="@dimen/progress_h"
+                android:max="10"
+                android:layout_centerInParent="true"/>
+
+            <TextView
+                android:id="@+id/tv_progress_horizontal"
+                android:layout_width="@dimen/progress_w"
+                android:layout_height="@dimen/progress_h"
+                android:layout_alignBottom="@id/progressBar"
+                android:background="@android:color/transparent"
+                android:layout_centerInParent="true"
+                android:gravity="center"/>
+        </RelativeLayout>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="9"/>
+    </LinearLayout>
 
 </FrameLayout>

@@ -20,10 +20,12 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.test_for_children.MainActivity;
 import com.example.test_for_children.R;
 import com.example.test_for_children.Test.ControlTest;
 import com.example.test_for_children.Test.Test;
 import com.example.test_for_children.adapters.ViewFinishItemAdapter;
+import com.example.test_for_children.interfaces.NavigationEvents;
 import com.example.test_for_children.viewmodels.TestViewModel;
 
 import java.util.ArrayList;
@@ -59,6 +61,8 @@ public class FinishFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+
 
         TestViewModel mViewModel = ViewModelProviders.of(getActivity()).get(TestViewModel.class);
 

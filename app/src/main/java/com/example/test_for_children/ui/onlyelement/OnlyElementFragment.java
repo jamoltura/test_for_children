@@ -211,6 +211,8 @@ public class OnlyElementFragment extends Fragment {
             TestViewModel mViewModel = ViewModelProviders.of(getActivity()).get(TestViewModel.class);
 
             mViewModel.init(getActivity().getApplicationContext());
+
+            getActivity().onBackPressed();
         }
     };
 

@@ -156,4 +156,10 @@ public class WorkFragment extends Fragment implements PageEvents {
     public MyDialog getNewInstance(){
         return new MyDialog(this);
     }
+
+    @Override
+    public void onDestroy() {
+        countDownTimer.cancel();
+        super.onDestroy();
+    }
 }

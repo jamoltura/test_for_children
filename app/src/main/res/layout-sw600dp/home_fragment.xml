@@ -11,15 +11,15 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         android:adjustViewBounds="true"
-        android:scaleType="centerCrop"
+        android:scaleType="fitXY"
         app:srcCompat="@drawable/ic_fon" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:baselineAligned="false" android:orientation="horizontal">
+        android:baselineAligned="false"
+        android:orientation="horizontal">
 
         <RelativeLayout
             android:layout_width="0dp"
@@ -73,19 +73,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="2">
-
-
-                    <ImageButton
-                        android:id="@+id/btn_add"
-                        style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:adjustViewBounds="true"
-                        android:scaleType="center"
-                        android:src="@drawable/plus"
-                        app:elevation="10dp"/>
-
                 </RelativeLayout>
             </LinearLayout>
         </RelativeLayout>
