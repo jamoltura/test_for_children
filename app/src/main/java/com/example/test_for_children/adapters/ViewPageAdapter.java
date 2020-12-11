@@ -63,16 +63,16 @@ public class ViewPageAdapter extends RecyclerView.Adapter<ViewPageAdapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        private TextView textView;
-        private Button btn_a;
-        private Button btn_b;
-        private Button btn_c;
-        private Button btn_d;
+        private final TextView textView;
+        private final Button btn_a;
+        private final Button btn_b;
+        private final Button btn_c;
+        private final Button btn_d;
 
-        private TextView text_answer_a_num;
-        private TextView text_answer_b_num;
-        private TextView text_answer_c_num;
-        private TextView text_answer_d_num;
+        private final TextView text_answer_a_num;
+        private final TextView text_answer_b_num;
+        private final TextView text_answer_c_num;
+        private final TextView text_answer_d_num;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -99,16 +99,16 @@ public class ViewPageAdapter extends RecyclerView.Adapter<ViewPageAdapter.ViewHo
             public void onClick(View v) {
                 switch (v.getId()){
                     case R.id.text_answer_a:
-                        clicked(v,1);
+                        clicked(v,0);
                         break;
                     case R.id.text_answer_b:
-                        clicked(v,2);
+                        clicked(v,1);
                         break;
                     case R.id.text_answer_c:
-                        clicked(v,3);
+                        clicked(v,2);
                         break;
                     case R.id.text_answer_d:
-                        clicked(v,4);
+                        clicked(v,3);
                 }
             }
         };

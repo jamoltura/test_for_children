@@ -1,35 +1,41 @@
 package com.example.test_for_children.ui.finish;
 
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
-
+import android.app.Activity;
 import android.content.Context;
+import android.graphics.pdf.PdfDocument;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.RecyclerView;
-
+import android.os.Environment;
+import android.print.PrintAttributes;
+import android.print.PrintManager;
+import android.print.pdf.PrintedPdfDocument;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.test_for_children.MainActivity;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
+
 import com.example.test_for_children.R;
 import com.example.test_for_children.Test.ControlTest;
 import com.example.test_for_children.Test.Test;
 import com.example.test_for_children.adapters.ViewFinishItemAdapter;
-import com.example.test_for_children.interfaces.NavigationEvents;
+import com.example.test_for_children.classes.MyPrinter;
 import com.example.test_for_children.viewmodels.TestViewModel;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.ResourceBundle;
+
+import static android.content.Context.PRINT_SERVICE;
 
 public class FinishFragment extends Fragment {
 
@@ -113,11 +119,50 @@ public class FinishFragment extends Fragment {
 
             Test test = mViewModel.getDataRand().getValue();
 
-            Toast.makeText(getContext(), "printing", Toast.LENGTH_LONG).show();
+            PrintManager printManager = (PrintManager) getActivity().getSystemService(Context.PRINT_SERVICE);
+
+            String jobName = getString(R.string.app_name) + " Document";
+
+            Activity activity = getActivity().getParent();
+
+            printManager.print(jobName, new MyPrinter(activity, test),null);
 
         }
     };
 
+    /**
+    private PrintedPdfDocument pdf() throws IOException {
+        PrintAttributes attributes = new PrintAttributes.Builder()
+                .setMediaSize(PrintAttributes.MediaSize.ISO_A4)
+                .setResolution(new PrintAttributes.Resolution("id", PRINT_SERVICE, 300, 300))
+                .setColorMode(PrintAttributes.COLOR_MODE_COLOR)
+                .setMinMargins(new PrintAttributes.Margins(0, 0, 0, 0))
+                .build();
 
+        PrintedPdfDocument pdf = new PrintedPdfDocument(getContext(), attributes);
 
+        PdfDocument.Page page = pdf.startPage(0);
+
+        FrameLayout frameLayout = (FrameLayout) getResources().getLayout(R.layout.finish_fragment);
+
+        frameLayout.draw(page.getCanvas());
+
+        pdf.finishPage(page);
+
+      //  String name = Environment.getExternalStorageDirectory() + "/hello.pdf";
+        String name =  "/hello.pdf";
+
+        File file = new File(name);
+
+        if (!file.exists()){
+            file.createNewFile();
+        }
+
+        FileOutputStream out = new FileOutputStream(file);
+
+        pdf.writeTo(out);
+
+        return pdf;
+    }
+     */
 }
