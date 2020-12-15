@@ -10,6 +10,7 @@ import androidx.navigation.Navigation;
 
 import com.example.test_for_children.Test.ControlTest;
 import com.example.test_for_children.Test.OnlyTest;
+import com.example.test_for_children.classes.AutoEditorBase;
 import com.example.test_for_children.interfaces.NavigationEvents;
 import com.example.test_for_children.viewmodels.TestViewModel;
 
@@ -18,6 +19,7 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity implements NavigationEvents {
 
     private static final String TAG = "myLogs";
+    private static final String KEY_BASE_LOAD = "base_load";
 
     private TestViewModel mViewModel;
 
@@ -26,43 +28,15 @@ public class MainActivity extends AppCompatActivity implements NavigationEvents 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        Random random = new Random();
-
-        for (int i = 0; i < 100; i++) {
-            String question = getRandomString() + " " + i;
-            String[] answers = new String[OnlyTest.COUNT_ANSWER];
-
-            answers[0] = getRandomString() + " " + i;
-            answers[1] = getRandomString() + " " + i;
-            answers[2] = getRandomString() + " " + i;
-            answers[3] = getRandomString() + " " + i;
-
-            int num = random.nextInt(4);
-
-
-            OnlyTest onlyTest = new OnlyTest(question, answers, num);
-
-
-            ControlTest controlTest = new ControlTest();
-
-            controlTest.setTest(getApplicationContext(), onlyTest);
-        }
-
-
-     //   ControlTest controlTest = new ControlTest();
-      //  OnlyTest[] onlyTests = controlTest.getRandomTest(getApplicationContext());
-      //  Test test = new Test(onlyTests);
-
-        /**
-        TestBase testBase = new TestBase(getApplicationContext());
-        if(testBase.delete(getApplicationContext())){
-            Toast.makeText(getApplicationContext(), "deleti", Toast.LENGTH_LONG).show();
-        }
-        */
+        onLoad();
 
         mViewModel = ViewModelProviders.of(this).get(TestViewModel.class);
         mViewModel.init(getApplicationContext());
+    }
+
+    private void onLoad(){
+        AutoEditorBase autoEditorBase = new AutoEditorBase(getApplicationContext());
+        autoEditorBase.initsializationKey();
     }
 
     @Override

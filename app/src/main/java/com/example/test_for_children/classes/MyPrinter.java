@@ -238,7 +238,12 @@ public class MyPrinter extends PrintDocumentAdapter {
                 list = getList(paint, mQuestion, _pageWidth, leftMargin + len);
                 titleBaseLine = DrawText(canvas, paint, list, leftMargin + len, titleBaseLine + 10, OFSET_GlOBAL_Y);
 
-                defaultValue = "Вы ответили:";
+                if (onlyTest.getAnswerForUser() != -1) {
+                    defaultValue = "Вы ответили:";
+                }else {
+                    defaultValue = "Вы не ответили на этот вопрос!";
+                }
+
                 paint.setFakeBoldText(true);
                 paint.setColor(Color.RED);
                 canvas.drawText(defaultValue, leftMargin, titleBaseLine + OFSET_GlOBAL_Y, paint);
@@ -249,7 +254,10 @@ public class MyPrinter extends PrintDocumentAdapter {
 
                 paint.setFakeBoldText(false);
                 paint.setColor(Color.BLACK);
-                String mAnswer = onlyTest.getAnswers()[onlyTest.getAnswerForUser()];
+                String mAnswer = "";
+                if (onlyTest.getAnswerForUser() != -1) {
+                    mAnswer = onlyTest.getAnswers()[onlyTest.getAnswerForUser()];
+                }
 
                 list = getList(paint, mAnswer, _pageWidth, leftMargin + len);
                 titleBaseLine = DrawText(canvas, paint, list, leftMargin + len, titleBaseLine, OFSET_GlOBAL_Y);
