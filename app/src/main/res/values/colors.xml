@@ -5,17 +5,17 @@
     <color name="colorAccent">#03DAC5</color>
 
 
-    <color name="color_fon">#23EB3C</color>
+    <color name="color_fon">#2594AD</color>
 
-    <color name="panel_start">#D7FF7D</color>
-    <color name="panel_end">#6E8240</color>
-
-    <color name="question_start">#00E6E6</color>
-    <color name="question_end">#00A3A3</color>
+    <color name="panel_start">#289FBA</color>
+    <color name="panel_end">#1A687A</color>
 
     <color name="select_panel_start">#82994C</color>
     <color name="select_pane_lend">#63753A</color>
 
     <color name="select_panel_start_2">#F5A9F2</color>
     <color name="select_pane_lend_2">#BA80B8</color>
+
+    <color name="progress_start">#32C9EB</color>
+    <color name="progress_end">#196778</color>
 </resources>

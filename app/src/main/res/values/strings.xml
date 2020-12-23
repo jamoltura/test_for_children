@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Тест МЧС для детей</string>
+    <string name="app_name">Тест МЧС для взрослых</string>
     <string name="start_test_btn">Начать тест</string>
 
 
@@ -24,144 +24,144 @@
 
 
     <!--    test base     -->
-    <string name="question_0">Сел хавфи ҳудуддда жойлашган ҳудудда сел келиши тўғрисидаги хабарни радиоорқали эшитиб қолдингиз. Қандай ҳаракат қиласиз?</string>
-    <string name="answer_a_0">Қимматбаҳо буюмларингизни йиғиштириб, ертўлага яширинасиз.</string>
-    <string name="answer_b_0">Уйингизни барча эшик,деразаларини ёпиб, хона ичига беркинасиз.</string>
-    <string name="answer_c_0">Тоғ ёнбағирларига селдан хавфсиз томондаги баланд жойга чиқасиз.</string>
-    <string name="answer_d_0">Ҳеч қандай ҳаракат зарур эмас. Барибир қутқарувчилар ўзлари қутқариб олишади.</string>
-    <string name="is_answer_0">2</string>
+    <string name="question_0">Ўзбекистон Республикаси Вазирлар Маҳкамасининг 27.10.1998 йилдаги 455-сонли қарорига мувофиқ табиий хусусиятли фавқулодда вазиятлар қайси гуруҳларга ажратилади?</string>
+    <string name="answer_a_0">Геологик хавфли ҳодисалар, гидрометеорологик хавфли ҳодисалар, фавқулодда эпидемиологик, эпизоотик ва эпифитотик вазиятлар.</string>
+    <string name="answer_b_0">Геологик хавфли ҳодисалар, гидрометеорологик хавфли ҳодисалар.</string>
+    <string name="answer_c_0">Қуруқлик ва гидросфера ҳолатининг ўзгариши билан боғлиқ вазиятлар.</string>
+    <string name="answer_d_0">Гидрометеорологик хавфли ҳодисалар, гидросфера ҳолатининг ўзгариши билан боғлиқ вазиятлар.</string>
+    <string name="is_answer_0">0</string>
 
-    <string name="question_1">Инсонни табиий офатлардан муҳофаза қилувчи қандай усуллар мавжуд?</string>
-    <string name="answer_a_1">Табиий офат тўғрисида ўз вақтида ишончли ва ҳаққоний ахборот бериш.</string>
-    <string name="answer_b_1">Махсус кийим-кечак билан таъминлаш.</string>
-    <string name="answer_c_1">Қутқарув асбоб-анжомлари сотиб олиш.</string>
-    <string name="answer_d_1">Табиий офатдан муҳофаза қилиб бўлмайди.</string>
-    <string name="is_answer_1">0</string>
+    <string name="question_1">Сел оқими тушунчаси қайси жойда тўғри ифода этилган?</string>
+    <string name="answer_a_1">Оғирлик кучи таъсирида тоғ ёнбағирларидан пастга сурилаётган тупроқ массаси.</string>
+    <string name="answer_b_1">Тоғ дарёлари ўзанларида тўсатдан юзага келувчи, катта ҳажмдаги қум, тош ва тоғжинслари бўлаклари аралашмасидан иборат лойқа ёки лой-тошли оқим.</string>
+    <string name="answer_c_1">Катта кучга эга ҳаво ҳаракати.</string>
+    <string name="answer_d_1">Қор массасининг тоғ ёнбағирлари бўйлаб пастга тушиши.</string>
+    <string name="is_answer_1">1</string>
 
-    <string name="question_2">Табиий офат ҳодисалари содир бўлганда аҳоли қандай огоҳлантирилади?</string>
-    <string name="answer_a_2">Огоҳлантирилмайди.</string>
-    <string name="answer_b_2">Телефон, радиотелефонлар, телевидение ва радиоканаллари орқали.</string>
-    <string name="answer_c_2">Сирена орқали.</string>
-    <string name="answer_d_2">Барча жавоблар тугри.</string>
-    <string name="is_answer_2">1</string>
+    <string name="question_2">Гидрометеорологик хавфли ҳодисаларга қайси фавқулодда вазият турлари киради?</string>
+    <string name="answer_a_2">Сув тошқинлари, сув кўтарилишлари, сел оқимлари, қор кўчкиси, кучли шамол, жала.</string>
+    <string name="answer_b_2">Сув тошқинлари, сел, ҳалокатли сув босишлари.</string>
+    <string name="answer_c_2">Қор кўчкиси, ер кўчкиси, кучли шамоллар.</string>
+    <string name="answer_d_2">Цунами, сув тошқинлари, сел ва ҳалокатли сув босишлари.</string>
+    <string name="is_answer_2">0</string>
 
-    <string name="question_3">Зилзила вақтида бино ичида беркиниш учун энг қулай жой қаерда?</string>
-    <string name="answer_a_3">Маҳкам турган стол ости, кароватлар ёни, таянч ички деворлар оралиғи, таянч деворлар ҳосил қилган бурчаклар, эшик оралиқлари.</string>
-    <string name="answer_b_3">Дераза токчаси ости, шкафлар ичи.</string>
-    <string name="answer_c_3">Шамоллатиш шахталари, кўп қаватли уйларнинг айвонлари.</string>
-    <string name="answer_d_3">Лифт ва зиналар.</string>
-    <string name="is_answer_3">0</string>
+    <string name="question_3">Стресс нима?</string>
+    <string name="answer_a_3">Инсонни шоду-хуррамликка туширувчи ҳолат.</string>
+    <string name="answer_b_3">Ҳайвон ва инсон организмида турли нохуш омиллар (стрессорлар) таъсирига жавобан юзага келувчи физиологик ҳимоя реакциялари мажмуи.</string>
+    <string name="answer_c_3">Хавф-хатарни сезиш, хавфсираш ҳолати.</string>
+    <string name="answer_d_3">Назоратдан чиқиб кетган қўрқув.</string>
+    <string name="is_answer_3">1</string>
 
-    <string name="question_4">Ёнғинни келиб чиқиши учун нималар етарли бўлиши керак?</string>
-    <string name="answer_a_4">Ёниш манбаи, ёнувчи модда, ҳаво миқдори.</string>
-    <string name="answer_b_4">Нефтъ, ацетон, қоғоз.</string>
-    <string name="answer_c_4">Кислород, нефтъ, ёнувчи модда.</string>
-    <string name="answer_d_4">Ёниш манбаи, ёнувчи модда, гугурт.</string>
-    <string name="is_answer_4">0</string>
+    <string name="question_4">Гидротехника иншоотларининг  тўлиқ турларини кўрсатинг?</string>
+    <string name="answer_a_4">Шлюзлар, кўллар, оқава сув чиқариш иншоотлари, булоқлар.</string>
+    <string name="answer_b_4">Денгизлар, бассейнлар, ирмоқлар, суғориш иншоотлари, қувурлар.</string>
+    <string name="answer_c_4">Сув-энергетика, сув таъминоти, суғориш иншоотлари, оқава сув чиқариш, сув-транспорт, балиқ ховузлари, спорт, безак иншоотлари.</string>
+    <string name="answer_d_4">Сув энергетика иншоотлари, тўғонлар, безак иншоотлари, кўллар.</string>
+    <string name="is_answer_4">2</string>
 
-    <string name="question_5">Зилзила нима?</string>
-    <string name="answer_a_5">Ер ички ҳаракатлари натижасида унинг юзасида пайдо бўладиган тебранма ҳаракат.</string>
-    <string name="answer_b_5">Ер ости зарбаси юзага келган жой.</string>
-    <string name="answer_c_5">Намгарчилик туфайли оғирлик кучи таъсирида тоғ жинсларининг ёнбағир бўйлаб пастга томон силжиши.</string>
-    <string name="answer_d_5">Табиат ҳодисаси.</string>
+    <string name="question_5">Бирламчи ёнғин ўчириш воситаларига нималар киради?</string>
+    <string name="answer_a_5">Ўт ўчиргичлар.</string>
+    <string name="answer_b_5">Сув насослари.</string>
+    <string name="answer_c_5">Ёнғин ўчириш машиналари.</string>
+    <string name="answer_d_5">Ҳамма жавоблар тўғри.</string>
     <string name="is_answer_5">0</string>
 
-    <string name="question_6">Ер кўчкисига қаерда тўғри таъриф берилган?</string>
-    <string name="answer_a_6">Намгарчилик туфайли оғирлик кучи таъсирида тоғ жинсларининг ёнбағир бўйлаб пастга томон силжиши.</string>
-    <string name="answer_b_6">Кутилмаганда рўй берадиган табиат ҳодисаси.</string>
-    <string name="answer_c_6">Тоғ ёнбағирларида тўсатдан юзага келадиган сув, қум, тош ва лойлардан иборат оқим.</string>
-    <string name="answer_d_6">Катта ҳажмдаги тоғ жинсларининг пастга узилиб тушиши.</string>
-    <string name="is_answer_6">0</string>
+    <string name="question_6">Қон тўхтатувчи боғлам (жгут) қанча муддатга қўйилади?</string>
+    <string name="answer_a_6">2 соатга.</string>
+    <string name="answer_b_6">1,5 соатга.</string>
+    <string name="answer_c_6">2 – 2,5 соатга.</string>
+    <string name="answer_d_6">1 соатга.</string>
+    <string name="is_answer_6">3</string>
 
-    <string name="question_7">Сел оқими тушунчаси?</string>
-    <string name="answer_a_7">Тоғ дарёлари ўзанларида тўсатдан юзага келувчи, катта ҳажмдаги қум, тош ва тоғжинслари бўлаклари аралашмасидан иборат лойқа ёки лой-тошли оқим.</string>
-    <string name="answer_b_7">Намгарчилик туфайли оғирлик кучи таъсирида тоғ жинсларининг ёнбағир бўйлаб пастга томон силжиши.</string>
-    <string name="answer_c_7">Ер ички ҳаракатлари натижасида унинг юзасида пайдо бўладиган тебранма ҳаракат.</string>
-    <string name="answer_d_7">Оғирлик кучи таъсири остида тоғ жинсларининг узилиб пастга отилиб тушуви.</string>
+    <string name="question_7">Қайси жавобда газниқобларнинг турлари тўғри кўрсатилган?</string>
+    <string name="answer_a_7">Фильтрловчи, изоляцияловчи.</string>
+    <string name="answer_b_7">Фильтрловчи, ўтказувчи.</string>
+    <string name="answer_c_7">Герметик, кичик габоритли. </string>
+    <string name="answer_d_7">Аэрозольга қарши, катта габаритли. </string>
     <string name="is_answer_7">0</string>
 
-    <string name="question_8">Ўпирилишга тўғри таърифни кўрсатинг?</string>
-    <string name="answer_a_8">Намгарчилик туфайли оғирлик кучи таъсирида тоғ жинсларининг ёнбағир бўйлаб пастга томон силжиши.</string>
-    <string name="answer_b_8">Ер ички ҳаракатлари натижасида унинг юзасида пайдо бўладиган тебранма ҳаракат.</string>
-    <string name="answer_c_8">Оғирлик кучи таъсири остида тоғ жинсларининг узилиб пастга отилиб тушуви.</string>
-    <string name="answer_d_8">Тоғ дарёлари ўзанларида тўсатдан юзага келувчи, катта ҳажмдаги қум, тош ва тоғжинслари бўлаклари аралашмасидан иборат лойқа ёки лой-тошли оқим.</string>
-    <string name="is_answer_8">2</string>
+    <string name="question_8">Релаксация нима?</string>
+    <string name="answer_a_8">Жисмоний ёки руҳий зўриқишдан қисман ёки тўла озод бўлиш усули.</string>
+    <string name="answer_b_8">Стрессни кучайтириш усули.</string>
+    <string name="answer_c_8">Руҳий зўриқишни бартараф этиш усули.</string>
+    <string name="answer_d_8">Аутотренинг машқларини бажариш усули.</string>
+    <string name="is_answer_8">0</string>
 
-    <string name="question_9">Техноген хусусиятли фавқулодда вазиятларга нима киради?</string>
-    <string name="answer_a_9">Транспорт ҳодисаси.</string>
-    <string name="answer_b_9">Сув тошкини.</string>
-    <string name="answer_c_9">Атмосфера ўзгариши.</string>
-    <string name="answer_d_9">Эпидемия келиб чиқиши.</string>
-    <string name="is_answer_9">0</string>
+    <string name="question_9">Панажойларда ичимлик сувининг меъёри 1 суткада неча литр бўлиши керак?</string>
+    <string name="answer_a_9">2 литр.</string>
+    <string name="answer_b_9">3 литр.</string>
+    <string name="answer_c_9">4 литр.</string>
+    <string name="answer_d_9">5 литр.</string>
+    <string name="is_answer_9">1</string>
 
-    <string name="question_10">Ахволи огирлашган одамга 1-ёрдам курсатиш нимадан бошланади?</string>
-    <string name="answer_a_10">Ерга ёткизишдан.</string>
-    <string name="answer_b_10">Вазиятни бахолашдан.</string>
-    <string name="answer_c_10">Хушига келтиришдан.</string>
-    <string name="answer_d_10">Тез ёрдам чакиришдан.</string>
-    <string name="is_answer_10">1</string>
+    <string name="question_10">Аҳолига хабар бериш қайси алоқа ва хабар бериш воситалари орқали амалга оширилади?</string>
+    <string name="answer_a_10">Симли ва симсиз алоқа воситалари орқали.</string>
+    <string name="answer_b_10">Телефон ва уяли телефонлар орқали.</string>
+    <string name="answer_c_10">Телевидение ва радио каналлари орқали.</string>
+    <string name="answer_d_10">Телефон, радиотелефонлар, телевидение ва радиоканаллари орқали.</string>
+    <string name="is_answer_10">3</string>
 
-    <string name="question_11">Қон тўхтатувчи боғлам (жгут) қанча муддатга қўйилади?</string>
-    <string name="answer_a_11">2 соатга.</string>
-    <string name="answer_b_11">1,5 соатга.</string>
-    <string name="answer_c_11">2 – 2,5 соатга.</string>
-    <string name="answer_d_11">1 соатга.</string>
-    <string name="is_answer_11">3</string>
+    <string name="question_11">Карантин дегани нима?</string>
+    <string name="answer_a_11">Юқумли (ўта хавфли юқумли) касалликлар тарқалишининг олдини олиш ва уларнинг оқибатларини бартараф этиш бўйича алоҳидалаш йўли билан эпидемияга қарши ўтказиладиган қатъий чора-тадбирлар мажмуи.</string>
+    <string name="answer_b_11">Касаллик тарқалган ҳудуддан чиқишни ва ушбу ҳудудга киришни чеклашга қаратилган тадбирлар мажмуи.</string>
+    <string name="answer_c_11">Касаллик тарқалган ҳудуддаги барча аҳолини бошқа аҳоли пунктига кўчириш бўйича олиб бориладиган тадбирлар мажмуи.</string>
+    <string name="answer_d_11">Дератизация ўтказиш.</string>
+    <string name="is_answer_11">0</string>
 
-    <string name="question_12">Бирламчи ёнғин ўчириш воситаларига нималар киради?</string>
-    <string name="answer_a_12">Ўт ўчиргичлар.</string>
-    <string name="answer_b_12">Сув насослари.</string>
-    <string name="answer_c_12">Ёнғин ўчириш машиналари.</string>
-    <string name="answer_d_12">Ҳамма жавоблар тўғри.</string>
+    <string name="question_12">Обсервация нима?</string>
+    <string name="answer_a_12">Касаллик қўзғатувчиси ўта хавфли касалликлар гуруҳига кирмайдиган ва касалликнинг оммавий тарқалиш хавфи бўлмаган вақтда ўтказиладиган тадбирлар мажмуи.</string>
+    <string name="answer_b_12">Ўта хавфли инфекцияли касалликлар ўчоғини тўла изоляция қилиб қўйишга қаратилган тадбирлар мажмуи.</string>
+    <string name="answer_c_12">Касалликнинг тарқалиб кетишининг олдини олиш мақсадида ўтказиладиган профилактика.</string>
+    <string name="answer_d_12">Кемирувчиларни йўқотишга қаратилган тадбирлар.</string>
     <string name="is_answer_12">0</string>
 
-    <string name="question_13">Қайси жавобда газниқобларнинг турлари тўғри кўрсатилган?</string>
-    <string name="answer_a_13">Фильтрловчи, изоляцияловчи.</string>
-    <string name="answer_b_13">Фильтрловчи, ўтказувчи.</string>
-    <string name="answer_c_13">Герметик, кичик габоритли.</string>
-    <string name="answer_d_13">Аэрозольга қарши, катта габаритли.</string>
+    <string name="question_13">Ер кўчкисига қаерда тўғри таъриф берилган?</string>
+    <string name="answer_a_13">Намгарчилик туфайли оғирлик кучи таъсирида тоғ жинсларининг ёнбағир бўйлаб пастга томон силжиши.</string>
+    <string name="answer_b_13">Кутилмаганда рўй берадиган табиат ҳодисаси.</string>
+    <string name="answer_c_13">Тоғ ёнбағирларида тўсатдан юзага келадиган сув, қум, тош ва лойлардан иборат оқим.</string>
+    <string name="answer_d_13">Катта ҳажмдаги тоғ жинсларининг пастга узилиб тушиши.</string>
     <string name="is_answer_13">0</string>
 
-    <string name="question_14">Сирена хабар бериш сигнали нима маънони англатади?</string>
-    <string name="answer_a_14">“Диққат барчага!”</string>
-    <string name="answer_b_14">“Сув тошқини!”</string>
-    <string name="answer_c_14">“Кимёвий заҳарланиш хавфи!”</string>
-    <string name="answer_d_14">“Радиациявий заҳарланиш хавфи!”</string>
-    <string name="is_answer_14">0</string>
+    <string name="question_14">Ваҳима нима?</string>
+    <string name="answer_a_14">Ҳайвонот ва инсон организмида турли нохуш омиллар (стрессорлар) таъсирига жавобан юзага келувчи физиологик ҳимоя реакциялари мажмуи.</string>
+    <string name="answer_b_14">Одамлар гуруҳини қамраб олган ва бошқариб бўлмайдиган жараёнга айланган қўрқув ҳисси.</string>
+    <string name="answer_c_14">Тасаввурдаги ёки ҳақиқий хавфдан ташвишланиш, қайғуриш.</string>
+    <string name="answer_d_14">Хавф-хатарни доимий сезиш, мунтазам хавотирда юриш.</string>
+    <string name="is_answer_14">1</string>
 
-    <string name="question_15">Кимёвий хавфли объектда авария содир бўлганда зарарланиш ҳудудида қолдингиз. Ҳудудни қайси йўналишда тарк этиш лозим?</string>
-    <string name="answer_a_15">Шамол йўналиши бўйича.</string>
-    <string name="answer_b_15">Шамол йўналишига қарама-қарши.</string>
-    <string name="answer_c_15">Шамол йўналишига перпендикуляр.</string>
-    <string name="answer_d_15">Шамол йўналишига аҳамият берилмайди.</string>
+    <string name="question_15">Қайси моддалар буғи энг заҳарли?</string>
+    <string name="answer_a_15">Хлор.</string>
+    <string name="answer_b_15">Аммиак.</string>
+    <string name="answer_c_15">Симоб.</string>
+    <string name="answer_d_15">Углерод икки оксиди.</string>
     <string name="is_answer_15">2</string>
 
-    <string name="question_16">Ваҳима нима?</string>
-    <string name="answer_a_16">Ҳайвонот ва инсон организмида турли нохуш омиллар (стрессорлар) таъсирига жавобан юзага келувчи физиологик ҳимоя реакциялари мажмуи.</string>
-    <string name="answer_b_16">Одамлар гуруҳини қамраб олган ва бошқариб бўлмайдиган жараёнга айланган қўрқув ҳисси.</string>
-    <string name="answer_c_16">Тасаввурдаги ёки ҳақиқий хавфдан ташвишланиш, қайғуриш.</string>
-    <string name="answer_d_16">Хавф-хатарни доимий сезиш, мунтазам хавотирда юриш.</string>
-    <string name="is_answer_16">1</string>
+    <string name="question_16">Геологик хавфли ҳодисаларга қайси фавқулодда вазият турлари киради?</string>
+    <string name="answer_a_16">Зилзила, цунами, ер кўчкиси.</string>
+    <string name="answer_b_16">Зилзила, ер  ва қор кўчкилари.</string>
+    <string name="answer_c_16">Ер кўчкиси, қор кўчкиси, тоғ ўпирилишлари.</string>
+    <string name="answer_d_16">Зилзила, ер кўчкиси ва тоғ ўпирилишлари.</string>
+    <string name="is_answer_16">3</string>
 
-    <string name="question_17">Қайси моддалар буғи энг заҳарли?</string>
-    <string name="answer_a_17">Хлор.</string>
-    <string name="answer_b_17">Аммиак.</string>
-    <string name="answer_c_17">Симоб.</string>
-    <string name="answer_d_17">Углерод икки оксиди.</string>
+    <string name="question_17">Зилзила нима?</string>
+    <string name="answer_a_17">Геологик хавфли ҳодиса.</string>
+    <string name="answer_b_17">Фавқулодда вазиятнинг бир тури.</string>
+    <string name="answer_c_17">Ер ички ҳаракатлари натижасида унинг юзасида пайдо бўладиган тебранма ҳаракат.</string>
+    <string name="answer_d_17">Табиат ҳодисаси.</string>
     <string name="is_answer_17">2</string>
 
-    <string name="question_18">Релаксация нима?</string>
-    <string name="answer_a_18">Жисмоний ёки руҳий зўриқишдан қисман ёки тўла озод бўлиш усули.</string>
-    <string name="answer_b_18">Стрессни кучайтириш усули.</string>
-    <string name="answer_c_18">Руҳий зўриқишни бартараф этиш усули.</string>
-    <string name="answer_d_18">Аутотренинг машқларини бажариш усули.</string>
+    <string name="question_18">Сирена хабар бериш сигнали нима маънони англатади?</string>
+    <string name="answer_a_18">“Диққат барчага!”</string>
+    <string name="answer_b_18">“Сув тошқини!”</string>
+    <string name="answer_c_18">“Кимёвий заҳарланиш хавфи!”</string>
+    <string name="answer_d_18">“Радиациявий заҳарланиш хавфи!”</string>
     <string name="is_answer_18">0</string>
 
-    <string name="question_19">Стресс нима?</string>
-    <string name="answer_a_19">Инсонни шоду-хуррамликка туширувчи ҳолат.</string>
-    <string name="answer_b_19">Ҳайвон ва инсон организмида турли нохуш омиллар (стрессорлар) таъсирига жавобан юзага келувчи физиологик ҳимоя реакциялари мажмуи.</string>
-    <string name="answer_c_19">Хавф-хатарни сезиш, хавфсираш ҳолати.</string>
-    <string name="answer_d_19">Назоратдан чиқиб кетган қўрқув.</string>
-    <string name="is_answer_19">1</string>
+    <string name="question_19">Кимёвий хавфли объектда авария содир бўлганда зарарланиш ҳудудида қолдингиз. Ҳудудни қайси йўналишда тарк этиш лозим?</string>
+    <string name="answer_a_19">Шамол йўналиши бўйича.</string>
+    <string name="answer_b_19">Шамол йўналишига қарама-қарши.</string>
+    <string name="answer_c_19">Шамол йўналишига перпендикуляр.</string>
+    <string name="answer_d_19">Шамол йўналишига аҳамият берилмайди.</string>
+    <string name="is_answer_19">2</string>
 
 </resources>

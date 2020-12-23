@@ -8,7 +8,7 @@
             android:angle="270"
             android:type="linear"/>
 
-        <stroke android:width="3dp" android:color="@color/panel_start"/>
+        <stroke android:width="3dp" android:color="@color/progress_start"/>
 
         <corners android:radius="6dp"/>
 
