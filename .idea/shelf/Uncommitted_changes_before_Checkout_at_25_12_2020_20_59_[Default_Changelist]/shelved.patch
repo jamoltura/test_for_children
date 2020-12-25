@@ -1,0 +1,36 @@
+Index: app/src/main/java/com/example/test_for_adults/ui/work/WorkFragment.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.test_for_adults.ui.work;\r\n\r\nimport android.os.Bundle;\r\nimport android.os.CountDownTimer;\r\nimport android.util.Log;\r\nimport android.view.LayoutInflater;\r\nimport android.view.View;\r\nimport android.view.ViewGroup;\r\nimport android.widget.ProgressBar;\r\nimport android.widget.TextView;\r\n\r\nimport androidx.annotation.NonNull;\r\nimport androidx.annotation.Nullable;\r\nimport androidx.fragment.app.Fragment;\r\nimport androidx.lifecycle.MutableLiveData;\r\nimport androidx.lifecycle.Observer;\r\nimport androidx.lifecycle.ViewModelProviders;\r\nimport androidx.viewpager2.widget.ViewPager2;\r\nimport androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback;\r\n\r\nimport com.example.test_for_adults.MainActivity;\r\nimport com.example.test_for_adults.R;\r\nimport com.example.test_for_adults.Test.ControlTest;\r\nimport com.example.test_for_adults.Test.Test;\r\nimport com.example.test_for_adults.adapters.ViewPageAdapter;\r\nimport com.example.test_for_adults.classes.MyDialog;\r\nimport com.example.test_for_adults.interfaces.NavigationEvents;\r\nimport com.example.test_for_adults.interfaces.PageEvents;\r\nimport com.example.test_for_adults.viewmodels.TestViewModel;\r\n\r\nimport java.text.ParseException;\r\nimport java.text.SimpleDateFormat;\r\nimport java.util.Calendar;\r\nimport java.util.Date;\r\nimport java.util.Objects;\r\n\r\npublic class WorkFragment extends Fragment implements PageEvents {\r\n\r\n    private static final String TAG = \"myLogs\";\r\n\r\n    private ViewPager2 viewPager2;\r\n    private TextView tv_time;\r\n\r\n    public static WorkFragment newInstance() {\r\n        return new WorkFragment();\r\n    }\r\n\r\n    @Override\r\n    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,\r\n                             @Nullable Bundle savedInstanceState) {\r\n\r\n        final View v = inflater.inflate(R.layout.work_fragment, container, false);\r\n\r\n        final ProgressBar progressBar = v.findViewById(R.id.progressBar);\r\n        final TextView tv_progress_horizontal = v.findViewById(R.id.tv_progress_horizontal);\r\n        tv_time = v.findViewById(R.id.tv_time);\r\n\r\n        viewPager2 = v.findViewById(R.id.viewPager);\r\n\r\n        viewPager2.setOffscreenPageLimit(ControlTest.COUNT_TESTS);\r\n\r\n        viewPager2.registerOnPageChangeCallback(new OnPageChangeCallback() {\r\n            @Override\r\n            public void onPageSelected(int position) {\r\n                progressBar.setProgress(position + 1);\r\n                String text = \"10/\" + (position + 1);\r\n                tv_progress_horizontal.setText(text);\r\n            }\r\n        });\r\n\r\n        countDownTimer.start();\r\n\r\n        return v;\r\n    }\r\n\r\n    @Override\r\n    public void onActivityCreated(@Nullable Bundle savedInstanceState) {\r\n        super.onActivityCreated(savedInstanceState);\r\n\r\n        TestViewModel mViewModel = ViewModelProviders.of(getActivity()).get(TestViewModel.class);\r\n\r\n        mViewModel.getDataRand().observe(getViewLifecycleOwner(), new Observer<Test>() {\r\n            @Override\r\n            public void onChanged(Test test) {\r\n                viewPager2.setAdapter(new ViewPageAdapter(getContext(), WorkFragment.this, test));\r\n            }\r\n        });\r\n    }\r\n\r\n    @Override\r\n    public void clicked(int index) {\r\n\r\n        int position = viewPager2.getCurrentItem();\r\n\r\n        if (position != ControlTest.COUNT_TESTS - 1){\r\n            viewPager2.setCurrentItem(position + 1);\r\n        }else {\r\n            MyDialog dlg = getNewInstance();\r\n            dlg.show(((MainActivity) getActivity()).getSupportFragmentManager(), \"dlg\");\r\n        }\r\n\r\n        TestViewModel mViewModel = ViewModelProviders.of(getActivity()).get(TestViewModel.class);\r\n\r\n        MutableLiveData<Test> data = mViewModel.getDataRand();\r\n\r\n        data.getValue().getOnlyTests()[position].setAnswerForUser(index);\r\n\r\n    }\r\n\r\n    @Override\r\n    public void cancelTimer() {\r\n        countDownTimer.cancel();\r\n        NavigationEvents navigationEvents = (MainActivity) getActivity();\r\n        assert navigationEvents != null;\r\n        navigationEvents.work_to_finish();\r\n    }\r\n\r\n    private final CountDownTimer countDownTimer = new CountDownTimer(30000, 1000) {\r\n        @Override\r\n        public void onTick(long millisUntilFinished) {\r\n\r\n            try {\r\n                setTexttime();\r\n            } catch (ParseException e) {\r\n                Log.d(TAG, e.getMessage());\r\n            }\r\n        }\r\n\r\n        @Override\r\n        public void onFinish() {\r\n            NavigationEvents navigationEvents = (MainActivity) getActivity();\r\n            assert navigationEvents != null;\r\n            navigationEvents.work_to_finish();\r\n        }\r\n    };\r\n\r\n    private void setTexttime() throws ParseException {\r\n\r\n        SimpleDateFormat format = new SimpleDateFormat(\"mm:ss\");\r\n\r\n        Calendar cal_s = Calendar.getInstance();\r\n\r\n        if (tv_time.getText().toString().isEmpty()) {\r\n            Date date = new Date();\r\n            date.setTime(30000);\r\n            cal_s.setTime(Objects.requireNonNull(format.parse(format.format(date))));\r\n            tv_time.setText(format.format(cal_s.getTime()));\r\n        }else {\r\n            String value = tv_time.getText().toString();\r\n            cal_s.setTime(Objects.requireNonNull(format.parse(value)));\r\n            cal_s.roll(Calendar.SECOND, false);\r\n            tv_time.setText(format.format(cal_s.getTime()));\r\n        }\r\n    }\r\n\r\n    public MyDialog getNewInstance(){\r\n        return new MyDialog(this);\r\n    }\r\n\r\n    @Override\r\n    public void onDestroy() {\r\n        countDownTimer.cancel();\r\n        super.onDestroy();\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/test_for_adults/ui/work/WorkFragment.java	(revision d7085474fb29b27f834b29a9bf276e26485ddf5b)
++++ app/src/main/java/com/example/test_for_adults/ui/work/WorkFragment.java	(date 1608911819832)
+@@ -38,6 +38,8 @@
+ 
+     private static final String TAG = "myLogs";
+ 
++
++    private long TIME = 300000;
+     private ViewPager2 viewPager2;
+     private TextView tv_time;
+ 
+@@ -115,7 +117,7 @@
+         navigationEvents.work_to_finish();
+     }
+ 
+-    private final CountDownTimer countDownTimer = new CountDownTimer(30000, 1000) {
++    private final CountDownTimer countDownTimer = new CountDownTimer(TIME, 1000) {
+         @Override
+         public void onTick(long millisUntilFinished) {
+ 
+@@ -142,7 +144,7 @@
+ 
+         if (tv_time.getText().toString().isEmpty()) {
+             Date date = new Date();
+-            date.setTime(30000);
++            date.setTime(TIME);
+             cal_s.setTime(Objects.requireNonNull(format.parse(format.format(date))));
+             tv_time.setText(format.format(cal_s.getTime()));
+         }else {

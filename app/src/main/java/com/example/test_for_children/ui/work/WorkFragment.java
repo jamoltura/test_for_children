@@ -38,6 +38,8 @@ public class WorkFragment extends Fragment implements PageEvents {
 
     private static final String TAG = "myLogs";
 
+    private final long TIME = 300000;
+    private long cur_time;
     private ViewPager2 viewPager2;
     private TextView tv_time;
 
@@ -115,7 +117,7 @@ public class WorkFragment extends Fragment implements PageEvents {
         navigationEvents.work_to_finish();
     }
 
-    private final CountDownTimer countDownTimer = new CountDownTimer(30000, 1000) {
+    private final CountDownTimer countDownTimer = new CountDownTimer(TIME, 1000) {
         @Override
         public void onTick(long millisUntilFinished) {
 
@@ -142,13 +144,15 @@ public class WorkFragment extends Fragment implements PageEvents {
 
         if (tv_time.getText().toString().isEmpty()) {
             Date date = new Date();
-            date.setTime(30000);
+            date.setTime(TIME);
             cal_s.setTime(Objects.requireNonNull(format.parse(format.format(date))));
             tv_time.setText(format.format(cal_s.getTime()));
+            cur_time = TIME;
         }else {
-            String value = tv_time.getText().toString();
-            cal_s.setTime(Objects.requireNonNull(format.parse(value)));
-            cal_s.roll(Calendar.SECOND, false);
+            cur_time -= 1000;
+            Date date = new Date();
+            date.setTime(cur_time);
+            cal_s.setTime(Objects.requireNonNull(format.parse(format.format(date))));
             tv_time.setText(format.format(cal_s.getTime()));
         }
     }
