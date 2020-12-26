@@ -59,7 +59,7 @@ public class LoginDialog extends DialogFragment {
                 String login = edit_login.getText().toString();
                 String password = edit_password.getText().toString();
 
-                if (login.equals("IntelSoft") && (password.equals("intel4909"))){
+                if (login.equals("mchs") && (password.equals("mchs"))){
                     NavigationEvents navigationEvents = (MainActivity) getActivity();
                     assert navigationEvents != null;
                     navigationEvents.home_to_elements();
