@@ -23,10 +23,10 @@ public class MyDialog extends DialogFragment {
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         return new AlertDialog.Builder(getActivity())
-                .setTitle("Внимания!")
-                .setPositiveButton("Да", click)
-                .setNegativeButton("нет", click)
-                .setMessage("Закончить?")
+                .setTitle("Диккат!")
+                .setPositiveButton("Ха", click)
+                .setNegativeButton("Йук", click)
+                .setMessage("Тугатилсинми?")
                 .create();
     }
 

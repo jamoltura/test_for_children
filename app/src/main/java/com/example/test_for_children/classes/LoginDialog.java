@@ -65,7 +65,7 @@ public class LoginDialog extends DialogFragment {
                     navigationEvents.home_to_elements();
                     dismiss();
                 }else {
-                    Toast.makeText(getContext(), "Логин или пароль неверный", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getContext(), "Логин ёки пароль нотугри", Toast.LENGTH_LONG).show();
                 }
             }
         });

@@ -54,6 +54,8 @@
                         android:layout_height="match_parent"
                         android:layout_centerInParent="true"
                         android:gravity="center"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp"
                         android:text="@string/head_finish" />
                 </RelativeLayout>
 
@@ -68,6 +70,8 @@
                         android:layout_height="match_parent"
                         android:layout_centerInParent="true"
                         android:gravity="center"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp"
                         android:text="@string/result_test_count" />
                 </RelativeLayout>
 
@@ -106,6 +110,8 @@
                         android:layout_height="match_parent"
                         android:layout_centerInParent="true"
                         android:gravity="center"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp"
                         android:text="@string/wrong_show" />
                 </RelativeLayout>
 
